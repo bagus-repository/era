@@ -20,6 +20,25 @@
     <link rel="stylesheet" href="{{ asset('css/app.min.css') }}">
     @stack('csses')
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/themes@5.0.15/default/default.min.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      const Toast = Swal.mixin({
+          toast: true,
+          position: 'top',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          iconColor: 'white',
+          customClass: {
+              popup: 'colored-toast'
+          },
+          onOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+      });
+  </script>
   </head>
   <body class="app flex-row align-items-center">
     <div class="container">
@@ -29,7 +48,6 @@
     <script src="{{ asset('js/app.min.js') }}"></script>
     @stack('scripts')
     <script src="{{ asset('js/custom.js') }}"></script>
-    @include('control.sweetalert')
     @include('layouts.partials.alert2')
     @yield('script')
   </body>
