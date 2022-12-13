@@ -210,6 +210,29 @@ class QuizService
         return $objMsg;
     }
 
+    /**
+     * Check remaining time
+     *
+     * @param Quiz $quiz
+     * @return MessageData
+     */
+    public function checkRemainingTime(Quiz $quiz): MessageData
+    {
+        $objMsg = new MessageData();
+        if ($quiz->remaining_time == null) {
+            $objMsg->Status = false;
+            $objMsg->Message = 'Kuis telah berakhir';
+            $objMsg->Payload = (object) [
+                'redirect' => true,
+                'redirect_url' => route('home.index'),
+            ];
+            return $objMsg;
+        }
+        $objMsg->Status = true;
+        $objMsg->Message = 'Kuis OK';
+        return $objMsg;
+    }
+
     public function submitAnswer($quiz_id, $question_id, $answer_id, $user_id): MessageData
     {
         $objMsg = new MessageData();
@@ -225,6 +248,12 @@ class QuizService
                 ];
                 return $objMsg;
             }
+
+            $CheckTime = $this->checkRemainingTime($quiz);
+            if (!$CheckTime->Status) {
+                return $CheckTime;
+            }
+            
             $quiz->load('questions_yet.question.answers');
             $question = $quiz->questions_yet->where('question_id', $question_id)->first();
             if ($question == null) {

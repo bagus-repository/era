@@ -140,17 +140,20 @@ class QuizController extends Controller
         if ($quiz === null) {
             return redirect()->route('home.index')->with('error', 'Kuis sudah tidak tersedia');
         }
-        $questions = $quiz->load(['questions_yet.question']);
-        if (count($questions->questions_yet) < 1) {
-            return redirect()->route('quizzes.summary', $quiz)->with('success', 'Quiz Selesai');
-        }
-        $total = $questions->raw_questions()->count();
-
         if ($quiz->start_time === null) {
             $quiz->update([
                 'start_time' => now()
             ]);
         }
+        $CheckTime = $this->quizService->checkRemainingTime($quiz);
+        if (!$CheckTime->Status) {
+            return redirect(url($CheckTime->Payload->redirect_url))->with('info', $CheckTime->Message);
+        }
+        $questions = $quiz->load(['questions_yet.question']);
+        if (count($questions->questions_yet) < 1) {
+            return redirect()->route('quizzes.summary', $quiz)->with('success', 'Quiz Selesai');
+        }
+        $total = $questions->raw_questions()->count();
 
         return view('quiz.do_quiz', [
             'quiz' => $quiz,
@@ -162,6 +165,10 @@ class QuizController extends Controller
 
     public function summary(Quiz $quiz)
     {
+        $quiz = $this->quizService->checkQuizGranted(auth()->id(), $quiz->id);
+        if ($quiz === null) {
+            return redirect()->route('home.index')->with('error', 'Kuis sudah tidak tersedia');
+        }
         $quiz = $this->quizService->updateQuizScore($quiz);
         return view('quiz.summary_quiz', [
             'quiz' => $quiz->Payload
@@ -188,6 +195,10 @@ class QuizController extends Controller
 
     public function finish(Quiz $quiz)
     {
+        $quiz = $this->quizService->checkQuizGranted(auth()->id(), $quiz->id);
+        if ($quiz === null) {
+            return redirect()->route('home.index')->with('error', 'Kuis sudah tidak tersedia');
+        }
         $quiz->update([
             'end_time' => now()
         ]);

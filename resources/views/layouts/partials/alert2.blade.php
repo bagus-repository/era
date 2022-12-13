@@ -30,4 +30,14 @@
             html: $('#AlertSuccess').html(),
         });
     </script>
+@elseif (session()->has('info'))
+    <div id="AlertInfo" style="display: none">
+        <b>{!! session()->get('info') !!}</b>
+    </div>
+    <script>
+        Toast.fire({
+            icon: 'info', 
+            html: $('#AlertInfo').html(),
+        });
+    </script>
 @endif

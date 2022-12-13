@@ -3,7 +3,7 @@
 @section('content')
 <div class="animated fadeIn mt-3">
     <h3>Dashboard</h3>
-    @if ($quizzes || count($quizzes) > 0)
+    @if ($quizzes && count($quizzes) > 0)
         <div class="alert alert-info">
             Hari ini ada jadwal quiz, silahkan untuk mengerjakan quiz dibawah ini.
         </div>

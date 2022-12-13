@@ -22,7 +22,9 @@
 
 7. Ubah APP_URL pada .env sesuai dengan yang akan dipakai (penting untuk File manager)
 
-8. php artisan serve
+8. php storage:link
+
+9. php artisan serve
 ```
 ## Usage
 
@@ -41,6 +43,8 @@ Password : 123456
 ### Buat Pertanyaan
 1. Silahkan dengan akun admin pada menu 'Daftar Pertanyaan'
 2. Buat pertanyaan setidaknya 10 dan jawaban minimal 1 maksimal 4, serta masukan score dan jawaban yang benar
+3. Pertanyaan bisa diimpor menggunakan file xlsx, ada 2 sheets: 'Questions' untuk master pertanyaan dan 'Answers' untuk master jawaban, Question dan Answer dihubungkan dengan menggunakan ID Question, pastikan ID Question 'Question' dan ID Question 'Answers' sesuai yang diinginkan.
+4. Note  *ID Question* bukan ID yang akan digenerate sistem, ini hanya sebgai penghubung antara 'Questions' dan 'Answer'
 
 ### Buat Quiz
 1. Silahkan dengan akun admin pada menu 'Daftar Quiz'
@@ -52,3 +56,8 @@ Password : 123456
 3. Klik Mulai untuk mengerjakan, klik Lanjutkan untuk melanjutkan mengerjakan, dan klik Lihat Hasil untuk melihat hasil quiz
 4. Pertanyaan hanya muncul 1 kali setelah pengguna input jawaban
 5. Ketika waktu habis atau soal sudah selesai maka user akan otomatis diarahkan ke halaman summary quiz
+
+### Melakukan API Request
+1. Import postman collection 'Quiz.postman_collection.json' pada aplikasi Postman
+2. Lakukan login pada 'Request Login' dengan akun admin untuk mengakses API 'Get Questions' dan 'Get Users' (login dengan akun user tidak dapat mengakses API tersebut)
+3. Get Questions dan Get Users menggunakan parameter 'page' untuk paging, memberikan angka 0 akan mengambil seluruh data (per page adalah 15 row)

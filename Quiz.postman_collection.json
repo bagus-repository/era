@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "9e6126e9-ed68-4bdd-aa5e-9b4028503c86",
+		"name": "Quiz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5252078"
+	},
+	"item": [
+		{
+			"name": "Get Questions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": "Accept response JSON",
+						"type": "text"
+					},
+					{
+						"key": "DeviceId",
+						"value": "0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/questions?page=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"questions"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"description": "set 0 to get all"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Questions",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "Accept response JSON",
+								"type": "text"
+							},
+							{
+								"key": "DeviceId",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/questions?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "set 0 to get all"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8001"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Dec 2022 11:04:36 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Dec 2022 11:04:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.24"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X2325ce48a36904787a99443251f5e93e"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 33,\n                \"question_id\": 2,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": \"2022-12-12T01:49:40.000000Z\",\n                \"updated_at\": \"2022-12-12T01:49:40.000000Z\"\n            },\n            {\n                \"id\": 34,\n                \"question_id\": 2,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": \"2022-12-12T01:49:40.000000Z\",\n                \"updated_at\": \"2022-12-12T01:49:40.000000Z\"\n            },\n            {\n                \"id\": 35,\n                \"question_id\": 2,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": \"2022-12-12T01:49:40.000000Z\",\n                \"updated_at\": \"2022-12-12T01:49:40.000000Z\"\n            },\n            {\n                \"id\": 36,\n                \"question_id\": 2,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": \"2022-12-12T01:49:40.000000Z\",\n                \"updated_at\": \"2022-12-12T01:49:40.000000Z\"\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 33,\n            \"question_id\": 2,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": \"2022-12-12T01:49:40.000000Z\",\n            \"updated_at\": \"2022-12-12T01:49:40.000000Z\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 5,\n                \"question_id\": 3,\n                \"answer\": \"1\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 6,\n                \"question_id\": 3,\n                \"answer\": \"2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 7,\n                \"question_id\": 3,\n                \"answer\": \"3\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 8,\n                \"question_id\": 3,\n                \"answer\": \"4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 7,\n            \"question_id\": 3,\n            \"answer\": \"3\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 4,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 12,\n                \"question_id\": 4,\n                \"answer\": \"1\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 13,\n                \"question_id\": 4,\n                \"answer\": \"2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 14,\n                \"question_id\": 4,\n                \"answer\": \"3\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 15,\n                \"question_id\": 4,\n                \"answer\": \"4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 14,\n            \"question_id\": 4,\n            \"answer\": \"3\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 5,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 19,\n                \"question_id\": 5,\n                \"answer\": \"1\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 20,\n                \"question_id\": 5,\n                \"answer\": \"2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 21,\n                \"question_id\": 5,\n                \"answer\": \"3\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 22,\n                \"question_id\": 5,\n                \"answer\": \"4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 21,\n            \"question_id\": 5,\n            \"answer\": \"3\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 6,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 26,\n                \"question_id\": 6,\n                \"answer\": \"1\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 27,\n                \"question_id\": 6,\n                \"answer\": \"2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 28,\n                \"question_id\": 6,\n                \"answer\": \"3\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 29,\n                \"question_id\": 6,\n                \"answer\": \"4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 28,\n            \"question_id\": 6,\n            \"answer\": \"3\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 7,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 37,\n                \"question_id\": 7,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 38,\n                \"question_id\": 7,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 39,\n                \"question_id\": 7,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 40,\n                \"question_id\": 7,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 37,\n            \"question_id\": 7,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 8,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 44,\n                \"question_id\": 8,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 45,\n                \"question_id\": 8,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 46,\n                \"question_id\": 8,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 47,\n                \"question_id\": 8,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 44,\n            \"question_id\": 8,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 9,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 51,\n                \"question_id\": 9,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 52,\n                \"question_id\": 9,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 53,\n                \"question_id\": 9,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 54,\n                \"question_id\": 9,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 51,\n            \"question_id\": 9,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 10,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 58,\n                \"question_id\": 10,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 59,\n                \"question_id\": 10,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 60,\n                \"question_id\": 10,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 61,\n                \"question_id\": 10,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 58,\n            \"question_id\": 10,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 11,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 65,\n                \"question_id\": 11,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 66,\n                \"question_id\": 11,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 67,\n                \"question_id\": 11,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 68,\n                \"question_id\": 11,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 65,\n            \"question_id\": 11,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 12,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 72,\n                \"question_id\": 12,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 73,\n                \"question_id\": 12,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 74,\n                \"question_id\": 12,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 75,\n                \"question_id\": 12,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 72,\n            \"question_id\": 12,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 13,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 79,\n                \"question_id\": 13,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 80,\n                \"question_id\": 13,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 81,\n                \"question_id\": 13,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 82,\n                \"question_id\": 13,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 79,\n            \"question_id\": 13,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 14,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 86,\n                \"question_id\": 14,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 87,\n                \"question_id\": 14,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 88,\n                \"question_id\": 14,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 89,\n                \"question_id\": 14,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 86,\n            \"question_id\": 14,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 15,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 93,\n                \"question_id\": 15,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 94,\n                \"question_id\": 15,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 95,\n                \"question_id\": 15,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 96,\n                \"question_id\": 15,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 93,\n            \"question_id\": 15,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    },\n    {\n        \"id\": 16,\n        \"question\": \"<p>Tes Pertanyaan</p>\",\n        \"sts\": 1,\n        \"score\": \"10.00\",\n        \"answers\": [\n            {\n                \"id\": 100,\n                \"question_id\": 16,\n                \"answer\": \"Jawaban 1\",\n                \"is_answer\": 1,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 101,\n                \"question_id\": 16,\n                \"answer\": \"Jawaban 2\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 102,\n                \"question_id\": 16,\n                \"answer\": \"Jawaban 3\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            },\n            {\n                \"id\": 103,\n                \"question_id\": 16,\n                \"answer\": \"Jawaban 4\",\n                \"is_answer\": 0,\n                \"created_at\": null,\n                \"updated_at\": null\n            }\n        ],\n        \"correct_answer\": {\n            \"id\": 100,\n            \"question_id\": 16,\n            \"answer\": \"Jawaban 1\",\n            \"is_answer\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": "Accept response JSON",
+						"type": "text"
+					},
+					{
+						"key": "DeviceId",
+						"value": "0",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/users?page=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1",
+							"description": "set 0 to get all"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "Accept response JSON",
+								"type": "text"
+							},
+							{
+								"key": "DeviceId",
+								"value": "0",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/users?page=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "set 0 to get all"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8001"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Dec 2022 11:09:06 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 12 Dec 2022 11:09:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.24"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X0ad984080be7c45fa1704e278d724d32"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"email\": \"admin@admin.com\",\n        \"role\": \"admin\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Bagus Budi\",\n        \"email\": \"bagus.budi1@forisa.co.id\",\n        \"role\": \"user\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Bagus Budi Setyawan\",\n        \"email\": \"bagus.budi2@forisa.co.id\",\n        \"role\": \"user\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Bagus Budi Setyawan\",\n        \"email\": \"bagus.setyawan95@gmail.com\",\n        \"role\": \"admin\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.collectionVariables.set(\"token\", pm.response.json().token);\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": "Accept response JSON",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "admin@admin.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8001",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

@@ -64,10 +64,12 @@ class Quiz extends Model
      */
     public function getRemainingTimeAttribute()
     {
-        $due = \Carbon\Carbon::parse($this->start_time)->addMinutes($this->duration);
-        if ($this->start_time !== null && now() <= $due) {
-            $remaining = $due->diffInSeconds(now());
-            return $remaining;
+        if ($this->start_time !== null) {
+            $due = \Carbon\Carbon::parse($this->start_time)->addMinutes($this->duration);
+            if (now() <= $due) {
+                $remaining = $due->diffInSeconds(now());
+                return $remaining;
+            }
         }
         return null;
     }
