@@ -2,6 +2,7 @@
 namespace App\Services;
 
 use App\Domain\MessageData;
+use App\Http\Requests\LoginRequest;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use App\Utils\LogUtil;
@@ -46,20 +47,21 @@ class AuthService
     /**
      * Do Login Function
      *
-     * @param array $objParam
+     * @param LoginRequest $request
      * @return MessageData
      */
-    public function doLogin(array $objParam): MessageData
+    public function doLogin(LoginRequest $request): MessageData
     {
         $objMsg = new MessageData();
         try {
-            if (!Auth::attempt($objParam)) {
+            if (!Auth::attempt($request->only('email', 'password'), $this->checkRememberMe($request->all()))) {
                 $objMsg->Status = false;
                 $objMsg->Message = 'Kredensial tidak diketahui, silahkan cek email dan password anda';
                 return $objMsg;
             }
             $objMsg->Status = true;
             $objMsg->Message = 'Selamat datang !';
+            Auth::logoutOtherDevices($request->password);
         } catch (\Exception $ex) {
             $objMsg->Status = false;
             $objMsg->Message = 'Gagal melakukan login, silahkan coba lagi';
@@ -67,5 +69,16 @@ class AuthService
         }
 
         return $objMsg;
+    }
+
+    /**
+     * Check remember me from login request
+     *
+     * @param array $params
+     * @return boolean
+     */
+    protected function checkRememberMe(array $params): bool
+    {
+        return isset($params['remember_me']) ? ($params['remember_me'] == 1):false;
     }
 }

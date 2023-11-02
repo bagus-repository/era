@@ -30,9 +30,9 @@ class AuthController extends Controller
 
     public function do_login(LoginRequest $request)
     {
-        $objResult = $this->authService->doLogin($request->only(['email', 'password']));
+        $objResult = $this->authService->doLogin($request);
         if ($objResult->Status) {
-            return redirect()->intended('/dashboard')->with('success', $objResult->Message);
+            return redirect()->to('/dashboard')->with('success', $objResult->Message);
         }else {
             return back()->with('error', $objResult->Message)->withInput([
                 'email' => $request->email
